@@ -1,5 +1,5 @@
 /obj/effect/sunlight
-	var/brightness = 10
+	var/brightness = 20
 	light_power = 1
 	light_color = "#2f1313"
 	layer = BELOW_MOB_LAYER
@@ -46,11 +46,11 @@
 	mode = GLOB.tod
 	switch(mode)
 		if("night")
-			light_color = pick("#100a18", "#0c0412", "#0f0012")
+			light_color = pick("#1b1622", "#17101d", "#150718")
 		if("dusk")
-			light_color = pick("#c26f56", "#c05271", "#b84933")
+			light_color = pick("#d8856b", "#cf6180", "#ce5e47")
 		if("dawn")
-			light_color = pick("#394579", "#49385d", "#3a1537")
+			light_color = pick("#596bbb", "#8264a5", "#a34b9d")
 		if("day")
 			light_color = pick("#dbbfbf", "#ddd7bd", "#add1b0", "#a4c0ca", "#ae9dc6", "#d09fbf")
 	set_light(brightness, light_power, light_color)
