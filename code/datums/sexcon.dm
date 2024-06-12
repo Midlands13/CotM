@@ -1158,7 +1158,6 @@
 				var/mob/living/carbon/human/H = owner
 				if(H.virginity)
 					H.on_virgin_loss()
-			var/husbando
 			if(fucking && !fucking.cmode)
 				var/yee
 				if(ishuman(owner) && ishuman(fucking))
@@ -1178,7 +1177,6 @@
 								SSticker.cuckers += "[H.real_name] (with [F.real_name])"
 					if(H.marriedto == F.real_name)
 						yee = 1
-						husbando = 1
 						owner.add_stress(/datum/stressevent/cumlove)
 					if(HAS_TRAIT(F, RTRAIT_GOODLOVER))
 						if(!H.mob_timers["cumtri"])
@@ -1292,6 +1290,7 @@
 		if(femmoans)
 			femmoans.stop()
 
+/*
 /mob/living/carbon/human/proc/become_pregnant(husband)
 	if(QDELETED(src))
 		return
@@ -1300,6 +1299,7 @@
 	if(stat == DEAD)
 		return
 	add_nausea(101)
+*/
 
 /datum/sex_controller/proc/add_cum_floor(turfu)
 	if(!turfu || !isturf(turfu))
