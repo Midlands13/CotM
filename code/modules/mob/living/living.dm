@@ -1030,7 +1030,7 @@
 /mob/living/verb/submit()
 	set name = "Yield"
 	set category = "IC"
-	set hidden = 1
+
 	if(surrendering)
 		return
 	if(stat)
