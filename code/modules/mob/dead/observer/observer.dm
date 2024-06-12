@@ -7,7 +7,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	name = "ghost"
 	desc = "" //jinkies!
 	icon = 'icons/mob/mob.dmi'
-	icon_state = ""
+	icon_state = "ghost"
 	layer = GHOST_LAYER
 	stat = DEAD
 	density = FALSE
@@ -65,6 +65,9 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/ghostize_time = 0
 
 /mob/dead/observer/rogue
+	icon = 'icons/roguetown/mob/misc.dmi'
+	icon_state = "ghost"
+	alpha = 100
 //	see_invisible = SEE_INVISIBLE_LIVING
 	sight = 0
 	see_in_dark = 2
@@ -77,9 +80,6 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 /mob/dead/observer/rogue/nodraw
 	draw_icon = FALSE
-	icon = 'icons/roguetown/mob/misc.dmi'
-	icon_state = "ghost"
-	alpha = 100
 
 /mob/dead/observer/rogue/Move(n, direct)
 	if(world.time < next_gmove)
@@ -715,10 +715,10 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			name += " \[[M.real_name]\]"
 		if(M.stat == DEAD)
 			continue
-/*			if(isobserver(M))
+			if(isobserver(M))
 				name += " \[ghost\]"
 			else
-				name += " \[dead\]"*/
+				name += " \[dead\]"
 		pois[name] = M
 
 	return pois

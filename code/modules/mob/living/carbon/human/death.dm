@@ -45,8 +45,10 @@
 				dust(just_ash=TRUE,drop_items=TRUE)
 				return
 
+	/*
 	if(!gibbed && can_death_zombify(src))
 		zombie_check()
+	*/
 
 	if(client || mind)
 		SSticker.deaths++

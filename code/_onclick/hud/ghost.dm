@@ -2,7 +2,7 @@
 	icon = 'icons/mob/screen_ghost.dmi'
 
 /atom/movable/screen/ghost/MouseEntered()
-//	flick(icon_state + "_anim", src)
+	flick(icon_state + "_anim", src)
 	..()
 
 /atom/movable/screen/ghost/jumptomob
@@ -137,8 +137,27 @@
 	if(owner.client?.prefs?.crt == TRUE)
 		scannies.alpha = 70
 
-	using = new /atom/movable/screen/ghost/orbit/rogue()
-	using.hud = src
+	using = new /atom/movable/screen/ghost/orbit(null, src)
+	using.screen_loc = ui_ghost_orbit
+	static_inventory += using
+
+	using = new /atom/movable/screen/ghost/reenter_corpse(null, src)
+	using.screen_loc = ui_ghost_reenter_corpse
+	static_inventory += using
+
+	using = new /atom/movable/screen/ghost/teleport(null, src)
+	using.screen_loc = ui_ghost_teleport
+	static_inventory += using
+
+	using = new /atom/movable/screen/ghost/moveup(null, src)
+	using.screen_loc = ui_ghost_moveup
+	static_inventory += using
+
+	using = new /atom/movable/screen/ghost/movedown(null, src)
+	using.screen_loc = ui_ghost_movedown
+	static_inventory += using
+
+	using = new /atom/movable/screen/ghost/bigassuselessbutton(null, src)
 	static_inventory += using
 
 /datum/hud/adminghost/New(mob/owner)
