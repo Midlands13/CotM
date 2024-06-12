@@ -189,10 +189,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		if(pref_species.desc)
 			to_chat(user, "[pref_species.desc]")
 		to_chat(user, "<font color='red'>Classes reset.</font>")
-	random_character(gender)
+	random_character(gender, save_flavor_text = TRUE)
 	accessory = "Nothing"
 
-	features["custom_species"] = null
 	headshot_link = null
 	customizer_entries = list()
 	validate_customizer_entries()

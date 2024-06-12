@@ -1,6 +1,6 @@
 
 	//The mob should have a gender you want before running this proc. Will run fine without H
-/datum/preferences/proc/random_character(gender_override, antag_override = FALSE)
+/datum/preferences/proc/random_character(gender_override, antag_override = FALSE, save_flavor_text = FALSE)
 	if(!pref_species)
 		random_species()
 	real_name = pref_species.random_name(gender,1)
@@ -12,7 +12,14 @@
 	var/list/skins = pref_species.get_skin_list()
 	skin_tone = skins[pick(skins)]
 	eye_color = random_eye_color()
-	features = pref_species.get_random_features()
+	if(save_flavor_text)
+		var/temp_flavor_text = features["flavor_text"]
+		var/temp_ooc_notes = features["ooc_notes"]
+		features = pref_species.get_random_features()
+		features["flavor_text"] = temp_flavor_text
+		features["ooc_notes"] = temp_ooc_notes
+	else
+		features = pref_species.get_random_features()
 	body_markings = pref_species.get_random_body_markings(features)
 	accessory = "Nothing"
 	reset_all_customizer_accessory_colors()
