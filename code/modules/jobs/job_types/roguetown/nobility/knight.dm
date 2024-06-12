@@ -1,13 +1,14 @@
 /datum/job/roguetown/knight
 	title = "Knight"
+	f_title = "Dame"
 	flag = KNIGHT
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
 	allowed_races = NOBLE_RACES_TYPES
-	allowed_sexes = list(MALE)
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
+	allowed_sexes = list(MALE, FEMALE) // ratwood keep discord will really love this
+	allowed_ages = list(AGE_YOUNG, AGE_ADULT, AGE_MIDDLEAGED)
 	allowed_patrons = ALL_DIVINE_PATRONS
 	tutorial = "A Knight with expert training; Born into petty nobility and raised as a squire from a young age, now you Guard the king as his knight, answer to his commands, and protect his honor. You're wholy dedicated to him, and his safety. Do not fail him."
 	display_order = JDO_KNIGHT
