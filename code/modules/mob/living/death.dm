@@ -97,6 +97,9 @@
 		addtimer(CALLBACK(src, PROC_REF(med_hud_set_status)), (DEFIB_TIME_LIMIT * 10) + 1)
 	stop_pulling()
 
+	cut_overlay(combat_indicator_overlay)
+	set_combat_indicator(FALSE)
+
 	. = ..()
 
 	if(client)
