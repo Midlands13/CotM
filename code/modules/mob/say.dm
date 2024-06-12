@@ -4,7 +4,6 @@
 /mob/verb/say_verb()
 	set name = "Say"
 	set category = "IC"
-	set hidden = 1
 
 	var/message = input(usr, "", "say") as text|null
 	// If they don't type anything just drop the message.
@@ -22,7 +21,6 @@
 /mob/verb/whisper_verb(message as text)
 	set name = "Whisper"
 	set category = "IC"
-	set hidden = 1
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
@@ -37,7 +35,7 @@
 /mob/verb/me_verb()
 	set name = "Me"
 	set category = "IC"
-	set hidden = 1
+
 #ifndef MATURESERVER
 	return
 #endif

@@ -47,7 +47,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 /mob/dead/new_player/say_verb(message as text)
 	set name = "Say"
 	set category = "IC"
-	set hidden = 1
 
 #ifdef MATURESERVER
 
