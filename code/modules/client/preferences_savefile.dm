@@ -426,6 +426,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["flavor_text"]			>> features["flavor_text"]
 	S["ooc_notes"]				>> features["ooc_notes"]
 
+	S["custom_species"]			>> features["custom_species"]
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
@@ -564,6 +566,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	WRITE_FILE(S["flavor_text"] , features["flavor_text"])
 	WRITE_FILE(S["ooc_notes"] , features["ooc_notes"])
+
+	WRITE_FILE(S["custom_species"] , features["custom_species"])
 
 	return TRUE
 
