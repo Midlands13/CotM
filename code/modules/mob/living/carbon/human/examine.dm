@@ -22,7 +22,7 @@
 	var/t_has = p_have()
 	var/t_is = p_are()
 	var/obscure_name
-	var/race_name = dna.species.name
+	var/race_name = dna.features["custom_species"] ? dna.features["custom_species"] : dna.species.name
 	var/datum/antagonist/maniac/maniac = user.mind?.has_antag_datum(/datum/antagonist/maniac)
 	if(maniac && (user != src))
 		race_name = "disgusting pig"
