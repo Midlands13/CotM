@@ -855,3 +855,13 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		return json_decode(data)
 	catch
 		return
+
+/proc/TextPreview(string, len = 40)
+	var/char_len = length_char(string)
+	if(char_len <= len)
+		if(char_len)
+			return "\[...\]"
+		else
+			return string
+	else
+		return "[copytext_char(string, 1, 37)]..."

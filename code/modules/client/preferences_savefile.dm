@@ -423,6 +423,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	if(!valid_headshot_link(null, headshot_link, TRUE))
 		headshot_link = null
 
+	S["flavor_text"]			>> features["flavor_text"]
+	S["ooc_notes"]				>> features["ooc_notes"]
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
@@ -486,6 +489,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["customizer_entries"] >> customizer_entries
 	validate_customizer_entries()
+
+	features["flavor_text"]	= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
+	features["ooc_notes"] = copytext(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
 
 	return TRUE
 
@@ -555,6 +561,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	
 	WRITE_FILE(S["update_mutant_colors"] , update_mutant_colors)
 	WRITE_FILE(S["headshot_link"] , headshot_link)
+	
+	WRITE_FILE(S["flavor_text"] , features["flavor_text"])
+	WRITE_FILE(S["ooc_notes"] , features["ooc_notes"])
 
 	return TRUE
 
