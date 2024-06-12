@@ -1,9 +1,5 @@
-"Ne participes, nec mors sequetur"
-# Blackstone
-Blackstone is a fantasy roleplaying game based on the source code for Roguetown, and is inspired by Table Top Roleplaying Games. The goal of Blackstone is to provide a freeform fantasy roleplay environment with minimal admin intervention, where players are empowered to collectively decide what is and is not acceptable through in-game action.
+"These lands shall be ours."
+# Midlands
+Midlands13 is a low-fantasy HRP server, focused on both characters and an overarching event-driven story. We aim to provide a space for roleplay-inclined players to develop stories, establish persistent relationships with other characters, and have fun doing so.
+Using Ratwood as our codebase, we do not aim to replicate their gameplay in any way, but instead build on it to create engaging character customization.
 
-## Wiki
-The wiki is currently being worked on at [here](https://wiki.moviesfreepremium.xyz/blackstone)
-
-## Discord
-Come say hi on the [discord](https://discord.gg/cHrV2mUmE4), it is where the community is the most active.
