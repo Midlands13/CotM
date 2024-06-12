@@ -191,8 +191,6 @@ GLOBAL_LIST_EMPTY(chosen_names)
 		to_chat(user, "<font color='red'>Classes reset.</font>")
 	random_character(gender, save_flavor_text = TRUE)
 	accessory = "Nothing"
-	if(age == AGE_YOUNG)
-		age = AGE_ADULT
 
 	headshot_link = null
 	customizer_entries = list()
@@ -282,6 +280,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<BR>"
 			dat += "<b>Race:</b> <a href='?_src_=prefs;preference=species;task=input'>[pref_species.name]</a>[spec_check(user) ? "" : " (!)"]<BR>"
+			dat += "<b>Custom Species:</b> <a href='?_src_=prefs;preference=custom_species;task=input'>[features["custom_species"] ? features["custom_species"] : "None"]</a>[spec_check(user) ? "" : " (!)"]<BR>"
 //			dat += "<a href='?_src_=prefs;preference=species;task=random'>Random Species</A> "
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SPECIES]'>Always Random Species: [(randomise[RANDOM_SPECIES]) ? "Yes" : "No"]</A><br>"
 
@@ -1416,6 +1415,10 @@ Slots: [job.spawn_positions]</span>
 							real_name = new_name
 						else
 							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and .</font>")
+
+				if("custom_species")
+					var/new_species = stripped_input(usr,"Choose your character's species:","Custom Species")
+					features["custom_species"] = copytext_char(new_species,1,MAX_NAME_LEN)
 
 //				if("age")
 //					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Years Dead") as num|null

@@ -220,9 +220,11 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		to_chat(src, "<span class='danger'>I can't use that.</span>")
 		return
 
+	/*
 	if(get_playerquality(ckey) <= -5)
 		to_chat(src, "<span class='danger'>Your PQ is too low!</span>")
 		return
+	*/
 
 	if(is_banned_from(ckey, "OOC"))
 		to_chat(src, "<span class='danger'>I have been banned from OOC.</span>")
@@ -256,6 +258,13 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 /client/proc/inputlooc() // for the bind
 	var/msg = input(src, "", "looc") as text|null
+	looc(msg)
+
+/client/verb/looc_verb(msg as text)
+	set name = "LOOC"
+	set desc = "Local OOC, seen only by those in view."
+	set category = "OOC"
+
 	looc(msg)
 
 /proc/toggle_ooc(toggle = null)

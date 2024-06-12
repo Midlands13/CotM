@@ -131,5 +131,5 @@
 
 /mob/proc/haltyell()
 	set name = "HALT!"
-	set category = "Noises"
+	set category = "IC"
 	emote("haltyell")

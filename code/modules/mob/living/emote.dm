@@ -19,7 +19,7 @@
 
 /mob/living/carbon/human/verb/emote_pray()
 	set name = "Pray"
-	set category = "Emotes"
+	set category = "IC"
 
 	emote("pray", intentional = TRUE)
 
@@ -114,7 +114,7 @@
 
 /mob/living/carbon/human/verb/emote_meditate()
 	set name = "Meditate"
-	set category = "Emotes"
+	set category = "IC"
 
 	emote("meditate", intentional = TRUE)
 
@@ -138,6 +138,7 @@
 /mob/living/carbon/human/verb/emote_bow()
 	set name = "Bow"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("bow", intentional = TRUE)
 
@@ -150,6 +151,7 @@
 /mob/living/carbon/human/verb/emote_burp()
 	set name = "Burp"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("burp", intentional = TRUE)
 
@@ -170,6 +172,7 @@
 /mob/living/carbon/human/verb/emote_choke()
 	set name = "Choke"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("choke", intentional = TRUE)
 
@@ -183,6 +186,7 @@
 /mob/living/carbon/human/verb/emote_crossarms()
 	set name = "Cross Arms"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("crossarms", intentional = TRUE)
 
@@ -221,6 +225,7 @@
 /mob/living/carbon/human/verb/emote_cough()
 	set name = "Cough"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("cough", intentional = TRUE)
 
@@ -240,6 +245,7 @@
 /mob/living/carbon/human/verb/emote_clearthroat()
 	set name = "Clear Throat"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("clearthroat", intentional = TRUE)
 
@@ -260,6 +266,7 @@
 /mob/living/carbon/human/verb/emote_dance()
 	set name = "Dance"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("dance", intentional = TRUE)
 
@@ -297,6 +304,7 @@
 /mob/living/carbon/human/verb/emote_drool()
 	set name = "Drool"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("drool", intentional = TRUE)
 
@@ -309,6 +317,7 @@
 /mob/living/carbon/human/verb/emote_faint()
 	set name = "Faint"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("faint", intentional = TRUE)
 
@@ -350,6 +359,7 @@
 /mob/living/carbon/human/verb/emote_frown()
 	set name = "Frown"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("frown", intentional = TRUE)
 
@@ -363,6 +373,7 @@
 /mob/living/carbon/human/verb/emote_gag()
 	set name = "Gag"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("gag", intentional = TRUE)
 
@@ -376,6 +387,7 @@
 /mob/living/carbon/human/verb/emote_gasp()
 	set name = "Gasp"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("gasp", intentional = TRUE)
 
@@ -402,6 +414,7 @@
 /mob/living/carbon/human/verb/emote_giggle()
 	set name = "Giggle"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("giggle", intentional = TRUE)
 
@@ -421,6 +434,7 @@
 /mob/living/carbon/human/verb/emote_chuckle()
 	set name = "Chuckle"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("chuckle", intentional = TRUE)
 
@@ -441,6 +455,7 @@
 /mob/living/carbon/human/verb/emote_glare()
 	set name = "Glare"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("glare", intentional = TRUE)
 
@@ -452,6 +467,7 @@
 /mob/living/carbon/human/verb/emote_grin()
 	set name = "Grin"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("grin", intentional = TRUE)
 
@@ -464,6 +480,7 @@
 /mob/living/carbon/human/verb/emote_groan()
 	set name = "Groan"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("groan", intentional = TRUE)
 
@@ -482,6 +499,7 @@
 /mob/living/carbon/human/verb/emote_grimace()
 	set name = "Grimace"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("grimace", intentional = TRUE)
 
@@ -508,6 +526,7 @@
 /mob/living/carbon/human/verb/emote_kiss()
 	set name = "Kiss"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("kiss", intentional = TRUE, targetted = TRUE)
 
@@ -550,6 +569,7 @@
 /mob/living/carbon/human/verb/emote_spit()
 	set name = "Spit"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("spit", intentional = TRUE, targetted = TRUE)
 
@@ -586,6 +606,7 @@
 /mob/living/carbon/human/verb/emote_hug()
 	set name = "Hug"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("hug", intentional = TRUE, targetted = TRUE)
 
@@ -606,6 +627,7 @@
 /mob/living/carbon/human/verb/emote_hold()
 	set name = "Hold Breath"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("hold", intentional = TRUE)
 
@@ -650,6 +672,7 @@
 /mob/living/carbon/human/verb/emote_slap()
 	set name = "Slap"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("slap", intentional = TRUE, targetted = TRUE)
 
@@ -682,6 +705,7 @@
 /mob/living/carbon/human/verb/emote_pinch()
 	set name = "Pinch"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("pinch", intentional = TRUE, targetted = TRUE)
 
@@ -703,6 +727,7 @@
 /mob/living/carbon/human/verb/emote_laugh()
 	set name = "Laugh"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("laugh", intentional = TRUE)
 
@@ -728,6 +753,7 @@
 /mob/living/carbon/human/verb/emote_nod()
 	set name = "Nod"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("nod", intentional = TRUE)
 
@@ -767,6 +793,7 @@
 /mob/living/carbon/human/verb/emote_scream()
 	set name = "Scream"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("scream", intentional = TRUE)
 
@@ -882,6 +909,7 @@
 /mob/living/carbon/human/verb/emote_rage()
 	set name = "Rage"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("rage", intentional = TRUE)
 
@@ -893,6 +921,7 @@
 /mob/living/carbon/human/verb/emote_attnwhistle()
 	set name = "Attnwhistle"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("attnwhistle", intentional = TRUE)
 
@@ -924,6 +953,7 @@
 /mob/living/carbon/human/verb/emote_shakehead()
 	set name = "Shake Head"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("shakehead", intentional = TRUE)
 
@@ -937,6 +967,7 @@
 /mob/living/carbon/human/verb/emote_shiver()
 	set name = "Shiver"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("shiver", intentional = TRUE)
 
@@ -950,6 +981,7 @@
 /mob/living/carbon/human/verb/emote_sigh()
 	set name = "Sigh"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("sigh", intentional = TRUE)
 
@@ -969,6 +1001,7 @@
 /mob/living/carbon/human/verb/emote_whistle()
 	set name = "Whistle"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("whistle", intentional = TRUE)
 
@@ -988,6 +1021,7 @@
 /mob/living/carbon/human/verb/emote_hmm()
 	set name = "Hmm"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("hmm", intentional = TRUE)
 
@@ -1007,6 +1041,7 @@
 /mob/living/carbon/human/verb/emote_huh()
 	set name = "Huh"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("huh", intentional = TRUE)
 
@@ -1026,6 +1061,7 @@
 /mob/living/carbon/human/verb/emote_hum()
 	set name = "Hum"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("hum", intentional = TRUE)
 
@@ -1044,6 +1080,7 @@
 /mob/living/carbon/human/verb/emote_smile()
 	set name = "Smile"
 	set category = "Emotes"
+	set hidden = 1
 
 	emote("smile", intentional = TRUE)
 
@@ -1056,6 +1093,7 @@
 /mob/living/carbon/human/verb/emote_sneeze()
 	set name = "Sneeze"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("sneeze", intentional = TRUE)
 */
@@ -1075,6 +1113,7 @@
 /mob/living/carbon/human/verb/emote_shh()
 	set name = "Shh"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("shh", intentional = TRUE)
 
@@ -1156,6 +1195,7 @@
 /mob/living/carbon/human/verb/emote_whimper()
 	set name = "Whimper"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("whimper", intentional = TRUE)
 
@@ -1180,6 +1220,7 @@
 /mob/living/carbon/human/verb/emote_yawn()
 	set name = "Yawn"
 	set category = "Noises"
+	set hidden = 1
 
 	emote("yawn", intentional = TRUE)
 
