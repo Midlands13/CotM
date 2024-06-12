@@ -1,5 +1,27 @@
 /mob/living/carbon/human/Topic(href, href_list)
 	var/observer_privilege = isobserver(usr)
+	if(href_list["task"] == "flavor_text")
+		if(!ismob(usr))
+			return
+		var/mob/user = usr
+		if(!dna)
+			return
+		var/list/dat = list("<p>[replacetext(dna.features["flavor_text"], "\n", "<br>")]</p>")
+		var/datum/browser/popup = new(user, "flavor_text", "<div align='center'>[src]</div>", 500, 200)
+		popup.set_content(dat.Join())
+		popup.open(FALSE)
+		return
+	if(href_list["task"] == "ooc_notes")
+		if(!ismob(usr))
+			return
+		var/mob/user = usr
+		if(!dna)
+			return
+		var/list/dat = list("<p>[replacetext(dna.features["ooc_notes"], "\n", "<br>")]</p>")
+		var/datum/browser/popup = new(user, "ooc_notes", "<div align='center'>[src]'s OOC Notes</div>", 500, 200)
+		popup.set_content(dat.Join())
+		popup.open(FALSE)
+		return
 	if(href_list["task"] == "view_headshot")
 		if(!ismob(usr))
 			return

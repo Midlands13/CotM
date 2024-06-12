@@ -194,6 +194,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	if(age == AGE_YOUNG)
 		age = AGE_ADULT
 
+	features["flavor_text"] = null
 	headshot_link = null
 	customizer_entries = list()
 	validate_customizer_entries()
@@ -365,6 +366,24 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
 			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+
+			dat += "<br><b>Flavor Text:</b> <a href='?_src_=prefs;preference=flavor_text;task=input'>Change</a>"
+			if(length(features["flavor_text"]) <= 40)
+				if(!length(features["flavor_text"]))
+					dat += "\[...\]"
+				else
+					dat += "[features["flavor_text"]]"
+			else
+				dat += "[TextPreview(features["flavor_text"])]..."
+			
+			dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
+			if(length(features["ooc_notes"]) <= 40)
+				if(!length(features["ooc_notes"]))
+					dat += "\[...\]"
+				else
+					dat += "[features["ooc_notes"]]"
+			else
+				dat += "[TextPreview(features["ooc_notes"])]..."
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
@@ -1461,6 +1480,14 @@ Slots: [job.spawn_positions]</span>
 							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
+				if("flavor_text")
+					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						features["flavor_text"] = msg
+				if("ooc_notes")
+					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC Notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
+					if(!isnull(msg))
+						features["ooc_notes"] = msg
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
