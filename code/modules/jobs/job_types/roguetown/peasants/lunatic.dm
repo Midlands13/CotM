@@ -8,7 +8,7 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = CLOTHED_RACES_TYPES
-	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	allowed_ages = ALL_AGES_LIST
 	outfit = /datum/outfit/job/roguetown/lunatic
 	bypass_lastclass = TRUE
 	bypass_jobban = FALSE
