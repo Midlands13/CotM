@@ -95,6 +95,7 @@
 	if(!isliving(mob))
 		return mob.Move(n, direct)
 	if(mob.stat == DEAD)
+/*
 #ifdef TESTSERVER
 		mob.ghostize()
 		return FALSE
@@ -104,6 +105,9 @@
 		else
 			if(!world.time%5)
 				to_chat(src, "<span class='warning'>My spirit hasn't manifested yet.</span>")
+		return FALSE
+*/
+		mob.ghostize()
 		return FALSE
 	if(mob.force_moving)
 		return FALSE

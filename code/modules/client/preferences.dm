@@ -624,6 +624,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 				dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_NOT_READY]'>UNREADY</a> <b>READY</b>"
 	else
 		dat += "<a href='byond://?src=[REF(N)];late_join=1'>JOINLATE</a>"
+		dat += "<a href='byond://?src=[REF(N)];manifest=1'>FOLK</a>"
+		dat += "<a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_OBSERVE]'>OBSERVE</a>"
 
 //	dat += "<a href='?_src_=prefs;preference=reset_all'>Reset Setup</a>"
 	dat += "</center>"
