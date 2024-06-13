@@ -427,6 +427,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["ooc_notes"]				>> features["ooc_notes"]
 
 	S["custom_species"]			>> features["custom_species"]
+	S["body_size"]				>> features["body_size"]
 
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
@@ -568,6 +569,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["ooc_notes"] , features["ooc_notes"])
 
 	WRITE_FILE(S["custom_species"] , features["custom_species"])
+	WRITE_FILE(S["body_size"] , features["body_size"])
 
 	return TRUE
 
