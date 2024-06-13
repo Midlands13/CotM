@@ -54,6 +54,7 @@
 	name = "Tajaran Snout"
 	organ_type = /obj/item/organ/snout/tajaran
 	sprite_accessories = list(
+		/datum/sprite_accessory/snout/leporid,
 		/datum/sprite_accessory/snout/tajaran,
 		/datum/sprite_accessory/snout/scanid,
 		/datum/sprite_accessory/snout/scanidalt,
@@ -164,6 +165,7 @@
 		/datum/sprite_accessory/snout/front/lcanidalt,
 		/datum/sprite_accessory/snout/front/lcanidstriped,
 		/datum/sprite_accessory/snout/front/lcanidstripedalt,
+		/datum/sprite_accessory/snout/leporid,
 		/datum/sprite_accessory/snout/front/scanid,
 		/datum/sprite_accessory/snout/front/scanidalt,
 		/datum/sprite_accessory/snout/front/scanidalt2,
@@ -198,6 +200,8 @@
 	organ_type = /obj/item/organ/snout/akula
 	sprite_accessories = list(
 		/datum/sprite_accessory/snout/sergal,
+		/datum/sprite_accessory/snout/front/shark,
+		/datum/sprite_accessory/snout/hshark,
 		/datum/sprite_accessory/snout/sharp,
 		/datum/sprite_accessory/snout/round,
 		/datum/sprite_accessory/snout/sharplight,
@@ -216,6 +220,7 @@
 	organ_type = /obj/item/organ/snout/cat
 	sprite_accessories = list(
 	    /datum/sprite_accessory/snout/cat,
+		/datum/sprite_accessory/snout/leporid,
 		/datum/sprite_accessory/snout/sharp,
 		/datum/sprite_accessory/snout/round,
 		/datum/sprite_accessory/snout/sharplight,

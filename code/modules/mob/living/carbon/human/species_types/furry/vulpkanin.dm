@@ -73,11 +73,14 @@
 		/datum/body_marking_set/none,
 		/datum/body_marking_set/bellysocks,
 		/datum/body_marking_set/belly,
+		/datum/body_marking_set/floof,
 	)
 	body_markings = list(
 		/datum/body_marking/belly,
 		/datum/body_marking/bellyslim,
 		/datum/body_marking/butt,
+		/datum/body_marking/floof_head,
+		/datum/body_marking/floof_chest,
 		/datum/body_marking/tonage,
 	)
 	
