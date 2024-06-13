@@ -1963,6 +1963,10 @@ Slots: [job.spawn_positions]</span>
 			set_new_race(new /datum/species/human/northern)
 			random_character(gender)
 
+	var/old_body_size = 1
+	if(character.dna.features["body_size"])
+		old_body_size = character.dna.features["body_size"]
+
 	character.age = age
 	character.dna.features = features.Copy()
 	character.gender = gender
@@ -2021,7 +2025,7 @@ Slots: [job.spawn_positions]</span>
 
 	character.headshot_link = headshot_link
 
-	character.dna.update_body_size(character.dna.features["body_size"])
+	character.dna.update_body_size(old_body_size)
 
 	if(parent)
 		var/list/L = get_player_curses(parent.ckey)
