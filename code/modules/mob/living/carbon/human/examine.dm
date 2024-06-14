@@ -475,8 +475,7 @@
 				. += "<span class='notice'>[dna.features["flavor_text"]]</span>"
 			else
 				. += "<span class='notice'>[copytext_char(dna.features["flavor_text"], 1, 37)]... <a href='?src=[REF(src)];flavor_notes=[REF(src)]'>More...</span></a>"
-		if(!obscure_name && dna.features["ooc_notes"])
-			. += "<a href='?src=[REF(src)];task=ooc_notes;'>View OOC Notes</a>"
+		. += "<a href='?src=[REF(src)];task=ooc_notes;'>View OOC Notes</a>"
 
 	if(!obscure_name && headshot_link)
 		. += "<a href='?src=[REF(src)];task=view_headshot;'>View headshot</a>"

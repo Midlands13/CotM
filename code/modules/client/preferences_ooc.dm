@@ -5,7 +5,7 @@
 			if(erp_input)
 				erp_pref = erp_input
 		if("erp_nc_select")
-			var/erp_nc_input = input(user, "Choose your non-con preference. This has the ability to disable non-con mechanics for your character.", "Non-Con Preference") as null|anything in ERP_PREF_LIST
+			var/erp_nc_input = input(user, "Choose your non-con preference.", "Non-Con Preference") as null|anything in ERP_PREF_LIST
 			if(erp_nc_input)
 				erp_nc_pref = erp_nc_input
 		if("erp_mechanics_select")

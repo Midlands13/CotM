@@ -7,7 +7,7 @@
 		if(!dna)
 			return
 		var/list/dat = list("<p>[replacetext(dna.features["flavor_text"], "\n", "<br>")]</p>")
-		var/datum/browser/popup = new(user, "flavor_text", "<div align='center'>[src]</div>", 500, 200)
+		var/datum/browser/popup = new(user, "flavor_text", "<div align='center'>[src]</div>", 500, 400)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
@@ -17,8 +17,13 @@
 		var/mob/user = usr
 		if(!dna)
 			return
-		var/list/dat = list("<p>[replacetext(dna.features["ooc_notes"], "\n", "<br>")]</p>")
-		var/datum/browser/popup = new(user, "ooc_notes", "<div align='center'>[src]'s OOC Notes</div>", 500, 200)
+		var/list/dat = list()
+		dat +="<p><b>ERP:</b> [erp_pref]<br>"
+		dat +="<b>Non-Con:</b> [erp_nc_pref]<br>"
+		dat +="<b>ERP Mechanics:</b> [erp_mechanics_pref]</p><br>"
+		if(dna.features["ooc_notes"] && length(dna.features["ooc_notes"]))
+			dat +="<br><p>[replacetext(dna.features["ooc_notes"], "\n", "<br>")]</p>"
+		var/datum/browser/popup = new(user, "ooc_notes", "<div align='center'>[src]'s OOC Notes</div>", 500, 400)
 		popup.set_content(dat.Join())
 		popup.open(FALSE)
 		return
