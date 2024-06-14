@@ -113,6 +113,10 @@
 
 	var/headshot_link = null
 
+	var/erp_pref = ERP_NO
+	var/erp_nc_pref = ERP_NO
+	var/erp_mechanics_pref = ERP_MECHANICS_NO
+
 	possible_rmb_intents = list(/datum/rmb_intent/feint,\
 	/datum/rmb_intent/aimed,\
 	/datum/rmb_intent/strong,\

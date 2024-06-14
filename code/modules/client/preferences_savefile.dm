@@ -428,6 +428,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	S["custom_species"]			>> features["custom_species"]
 
+	S["erp_pref"]				>> erp_pref
+	S["erp_nc_pref"]			>> erp_nc_pref
+	S["erp_mechanics_pref"]		>> erp_mechanics_pref
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update, S)		//needs_update == savefile_version if we need an update (positive integer)
@@ -494,6 +498,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	features["flavor_text"]	= copytext(features["flavor_text"], 1, MAX_FLAVOR_LEN)
 	features["ooc_notes"] = copytext(features["ooc_notes"], 1, MAX_FLAVOR_LEN)
+
+	sanitize_inlist(erp_pref, ERP_PREF_LIST, ERP_NO)
+	sanitize_inlist(erp_nc_pref, ERP_PREF_LIST, ERP_NO)
+	sanitize_inlist(erp_mechanics_pref, ERP_MECHANICS_LIST, ERP_MECHANICS_NO)
 
 	return TRUE
 
@@ -568,6 +576,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["ooc_notes"] , features["ooc_notes"])
 
 	WRITE_FILE(S["custom_species"] , features["custom_species"])
+
+	WRITE_FILE(S["erp_pref"] , erp_pref)
+	WRITE_FILE(S["erp_nc_pref"] , erp_nc_pref)
+	WRITE_FILE(S["erp_mechanics_pref"] , erp_mechanics_pref)
 
 	return TRUE
 
