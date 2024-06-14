@@ -1920,6 +1920,9 @@ Slots: [job.spawn_positions]</span>
 						choice = choices[choice]
 						if(!load_character(choice))
 							random_character()
+							erp_pref = ERP_NO
+							erp_nc_pref = ERP_NO
+							erp_mechanics_pref = ERP_MECHANICS_NO
 							save_character()
 
 				if("tab")

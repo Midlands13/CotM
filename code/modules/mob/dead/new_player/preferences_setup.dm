@@ -20,9 +20,6 @@
 		features["ooc_notes"] = temp_ooc_notes
 	else
 		features = pref_species.get_random_features()
-		erp_pref = ERP_NO
-		erp_nc_pref = ERP_NO
-		erp_mechanics_pref = ERP_MECHANICS_NO
 	body_markings = pref_species.get_random_body_markings(features)
 	accessory = "Nothing"
 	reset_all_customizer_accessory_colors()
