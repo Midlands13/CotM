@@ -364,7 +364,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 			dat += "<br>"
 			dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 
-
+			dat += "<br><b>Body Size:</b> <a href='?_src_=prefs;preference=body_size;task=input'>[features["body_size"] ? "[features["body_size"] * 100]%" : "100%"]</a>"
 			dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
 			dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
 
@@ -1487,6 +1487,11 @@ Slots: [job.spawn_positions]</span>
 							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
+				if("body_size")
+					var/new_body_size = input(user, "Choose your desired sprite size: ([BODY_SIZE_MIN*100]%-[BODY_SIZE_MAX*100]%)\nWarning: This may make your character look distorted", "Character Preference", features["body_size"]*100) as num|null
+					if (new_body_size)
+						new_body_size = clamp(new_body_size * 0.01, BODY_SIZE_MIN, BODY_SIZE_MAX)
+						features["body_size"] = new_body_size
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
@@ -1965,6 +1970,10 @@ Slots: [job.spawn_positions]</span>
 			set_new_race(new /datum/species/human/northern)
 			random_character(gender)
 
+	var/old_body_size = 1
+	if(character.dna.features["body_size"])
+		old_body_size = character.dna.features["body_size"]
+
 	character.age = age
 	character.dna.features = features.Copy()
 	character.gender = gender
@@ -2026,6 +2035,7 @@ Slots: [job.spawn_positions]</span>
 	character.erp_pref = erp_pref
 	character.erp_nc_pref = erp_nc_pref
 	character.erp_mechanics_pref = erp_mechanics_pref
+	character.dna.update_body_size(old_body_size)
 
 	if(parent)
 		var/list/L = get_player_curses(parent.ckey)

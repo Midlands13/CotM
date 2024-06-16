@@ -42,6 +42,7 @@
 /datum/dna/proc/transfer_identity(mob/living/carbon/destination, transfer_SE = 0)
 	if(!istype(destination))
 		return
+	var/old_size = destination.dna.features["body_size"]
 	destination.dna.unique_enzymes = unique_enzymes
 	destination.dna.uni_identity = uni_identity
 	destination.dna.blood_type = blood_type
@@ -52,6 +53,7 @@
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
+	destination.dna.update_body_size(old_size)
 
 /datum/dna/proc/copy_dna(datum/dna/new_dna)
 	new_dna.unique_enzymes = unique_enzymes
@@ -447,6 +449,12 @@
 		return FALSE
 	add_mutation(mutation, MUT_NORMAL)
 	return TRUE
+
+/datum/dna/proc/update_body_size(old_size)
+	if(!holder || features["body_size"] == old_size)
+		return
+	holder.resize = features["body_size"] / old_size
+	holder.update_transform()
 
 /////////////////////////// DNA HELPER-PROCS //////////////////////////////
 

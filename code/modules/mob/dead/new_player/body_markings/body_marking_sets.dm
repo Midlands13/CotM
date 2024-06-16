@@ -21,6 +21,13 @@
 		/datum/body_marking/sock,
 	)
 
+/datum/body_marking_set/floof
+	name = "Floof"
+	body_marking_list = list(
+		/datum/body_marking/floof_head,
+		/datum/body_marking/floof_chest,
+	)
+
 /datum/body_marking_set/bellyscale
 	name = "Scaled Belly"
 	body_marking_list = list(

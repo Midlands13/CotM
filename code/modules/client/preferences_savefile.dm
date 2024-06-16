@@ -427,6 +427,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["ooc_notes"]				>> features["ooc_notes"]
 
 	S["custom_species"]			>> features["custom_species"]
+	S["body_size"]				>> features["body_size"]
 
 	S["erp_pref"]				>> erp_pref
 	S["erp_nc_pref"]			>> erp_nc_pref
@@ -576,6 +577,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["ooc_notes"] , features["ooc_notes"])
 
 	WRITE_FILE(S["custom_species"] , features["custom_species"])
+	WRITE_FILE(S["body_size"] , features["body_size"])
 
 	WRITE_FILE(S["erp_pref"] , erp_pref)
 	WRITE_FILE(S["erp_nc_pref"] , erp_nc_pref)
