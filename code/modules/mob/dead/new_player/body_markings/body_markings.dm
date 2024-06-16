@@ -188,3 +188,34 @@
 	icon_state = "drake_eyes"
 	affected_bodyparts = HEAD
 	default_color = "FF0000"
+
+/datum/body_marking/floof_head
+	icon = 'icons/mob/body_markings/secondary_markings.dmi'
+	name = "Floof (Head)"
+	icon_state = "floof"
+	affected_bodyparts = HEAD
+	default_color = DEFAULT_SECONDARY
+
+/datum/body_marking/floof_chest
+	icon = 'icons/mob/body_markings/secondary_markings.dmi'
+	name = "Floof (Chest)"
+	icon_state = "floof"
+	affected_bodyparts = CHEST
+	default_color = DEFAULT_SECONDARY
+	covers_chest = TRUE
+
+/datum/body_marking/bat
+	icon = 'icons/mob/body_markings/chest_markings.dmi'
+	name = "Bat"
+	icon_state = "bat"
+	affected_bodyparts = CHEST
+	default_color = DEFAULT_SECONDARY
+	covers_chest = TRUE
+
+/datum/body_marking/wolf
+	icon = 'icons/mob/body_markings/chest_markings.dmi'
+	name = "Wolf"
+	icon_state = "wolf"
+	affected_bodyparts = CHEST
+	default_color = DEFAULT_SECONDARY
+	covers_chest = TRUE
