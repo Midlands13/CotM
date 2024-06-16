@@ -280,6 +280,12 @@
 	color_keys = 2
 	color_key_names = list("Snout", "Inner")
 
+/datum/sprite_accessory/snout/leporid
+	name = "Leporid"
+	icon_state = "leporid"
+	color_keys = 2
+	color_key_names = list("Snout", "Nose")
+
 /******************************************
 **************** Snouts *******************
 *************but higher up*****************/
