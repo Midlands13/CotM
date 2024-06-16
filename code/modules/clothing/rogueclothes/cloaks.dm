@@ -25,6 +25,7 @@
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
 	var/picked
 	flags_inv = HIDECROTCH
 
@@ -256,6 +257,7 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
+	flags_inv = HIDECROTCH|HIDEBOOB
 	var/picked
 	flags_inv = HIDECROTCH
 
@@ -566,7 +568,7 @@
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
 	allowed_race = CLOTHED_RACES_TYPES
-	flags_inv = HIDECROTCH
+	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/cloak/apron/blacksmith
 	name = "leather apron"
@@ -590,6 +592,7 @@
 	item_state = "waistpron"
 	body_parts_covered = GROIN
 	boobed = FALSE
+	flags_inv = HIDECROTCH
 
 /obj/item/clothing/cloak/apron/waist/brown
 	color = CLOTHING_BROWN

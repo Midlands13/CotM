@@ -98,9 +98,6 @@
 		return list(SPAN_DELF)
 	return message_language.spans
 
-/datum/species/elf/dark/on_species_gain(mob/living/carbon/C, datum/species/old_species)
-	..()
-
 /datum/species/elf/dark/get_skin_list()
 	return list(
 		"Commorah" = SKIN_COLOR_COMMORAH,

@@ -140,7 +140,7 @@
 	item_state = "rags"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	flags_inv = HIDECROTCH
+	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/suit/roguetown/shirt/tunic
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -153,7 +153,7 @@
 	sleevetype = "tunic"
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	flags_inv = HIDECROTCH
+	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/suit/roguetown/shirt/tunic/green
 	color = CLOTHING_GREEN
@@ -184,7 +184,7 @@
 	allowed_sex = list(FEMALE)
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	flags_inv = HIDECROTCH
+	flags_inv = HIDECROTCH|HIDEBOOB
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -292,7 +292,6 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDECROTCH
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -307,7 +306,6 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDECROTCH
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -322,7 +320,6 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDECROTCH
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -337,7 +334,6 @@
 	sleeved = null
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDECROTCH
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -352,7 +348,6 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
 	boobed = TRUE
 	color = null
-	flags_inv = HIDEBOOB|HIDECROTCH
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
@@ -404,7 +399,6 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	boobed = TRUE
-	flags_inv = HIDEBOOB|HIDECROTCH
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	allowed_sex = list(MALE)
@@ -424,4 +418,4 @@
 	boobed = TRUE
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	flags_inv = HIDECROTCH
+	flags_inv = HIDECROTCH|HIDEBOOB
