@@ -145,6 +145,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/headshot_link
 
+	var/erp_pref = ERP_NO
+	var/erp_nc_pref = ERP_NO
+	var/erp_mechanics_pref = ERP_MECHANICS_NO
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -373,15 +376,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 					dat += "[features["flavor_text"]]"
 			else
 				dat += "[TextPreview(features["flavor_text"])]..."
-			
-			dat += "<br><b>OOC Notes:</b> <a href='?_src_=prefs;preference=ooc_notes;task=input'>Change</a>"
-			if(length(features["ooc_notes"]) <= 40)
-				if(!length(features["ooc_notes"]))
-					dat += "\[...\]"
-				else
-					dat += "[features["ooc_notes"]]"
-			else
-				dat += "[TextPreview(features["ooc_notes"])]..."
+
+			dat += "<br><b>OOC Prefs:</b> <a href='?_src_=prefs;preference=ooc_prefs;task=menu'>Change</a>"
 
 			dat += "<br><b>Headshot:</b> <a href='?_src_=prefs;preference=headshot;task=input'>Change</a>"
 			if(headshot_link != null)
@@ -1262,6 +1258,10 @@ Slots: [job.spawn_positions]</span>
 		ShowCustomizers(user)
 		return
 
+	else if(href_list["preference"] == "ooc_prefs")
+		ShowOOCPrefs(user)
+		return
+
 	else if(href_list["preference"] == "keybinds")
 		switch(href_list["task"])
 			if("close")
@@ -1349,6 +1349,11 @@ Slots: [job.spawn_positions]</span>
 			handle_body_markings_topic(user, href_list)
 			ShowChoices(user)
 			ShowMarkings(user)
+			return
+		if("change_ooc_prefs")
+			handle_ooc_topic(user, href_list)
+			ShowChoices(user)
+			ShowOOCPrefs(user)
 			return
 		if("random")
 			switch(href_list["preference"])
@@ -1491,10 +1496,6 @@ Slots: [job.spawn_positions]</span>
 					var/msg = stripped_multiline_input(usr, "Set the flavor text in your 'examine' verb.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
 						features["flavor_text"] = msg
-				if("ooc_notes")
-					var/msg = stripped_multiline_input(usr, "Set always-visible OOC notes related to content preferences. THIS IS NOT FOR CHARACTER DESCRIPTIONS!", "OOC Notes", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
-					if(!isnull(msg))
-						features["ooc_notes"] = msg
 				if("headshot")
 					to_chat(user, "<span class='notice'>Please use a relatively SFW image of the head and shoulder area to maintain immersion level. Lastly, ["<span class='bold'>do not use a real life photo or use any image that is less than serious.</span>"]</span>")
 					to_chat(user, "<span class='notice'>If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser.</span>")
@@ -1532,11 +1533,13 @@ Slots: [job.spawn_positions]</span>
 
 				if("charflaw")
 					var/list/coom = GLOB.character_flaws.Copy()
+					if(!user.can_do_sex())
+						coom -= "Love-Fiend"
 					var/result = input(user, "Select a flaw", "Roguetown") as null|anything in coom
 					if(result)
 						if(result == "Love-Fiend")
 							if(!user.can_do_sex())
-								coom -= "Love-Fiend"
+								// coom -= "Love-Fiend" // already removed from the list
 								result = pick(coom)
 						result = coom[result]
 						var/datum/charflaw/C = new result()
@@ -1689,7 +1692,8 @@ Slots: [job.spawn_positions]</span>
 						gender = pickedGender
 						ResetJobs()
 						to_chat(user, "<font color='red'>Classes reset.</font>")
-						random_character(gender)
+						random_character(gender, save_flavor_text = TRUE)
+					genderize_customizer_entries()
 				if("domhand")
 					if(domhand == 1)
 						domhand = 2
@@ -1921,6 +1925,9 @@ Slots: [job.spawn_positions]</span>
 						choice = choices[choice]
 						if(!load_character(choice))
 							random_character()
+							erp_pref = ERP_NO
+							erp_nc_pref = ERP_NO
+							erp_mechanics_pref = ERP_MECHANICS_NO
 							save_character()
 
 				if("tab")
@@ -2025,6 +2032,9 @@ Slots: [job.spawn_positions]</span>
 
 	character.headshot_link = headshot_link
 
+	character.erp_pref = erp_pref
+	character.erp_nc_pref = erp_nc_pref
+	character.erp_mechanics_pref = erp_mechanics_pref
 	character.dna.update_body_size(old_body_size)
 
 	if(parent)
