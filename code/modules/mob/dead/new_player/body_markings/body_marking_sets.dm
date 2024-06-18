@@ -21,6 +21,13 @@
 		/datum/body_marking/sock,
 	)
 
+/datum/body_marking_set/bellysockstertiary
+	name = "Belly & Socks"
+	body_marking_list = list(
+		/datum/body_marking/belly,
+		/datum/body_marking/sock/tertiary,
+	)
+
 /datum/body_marking_set/floof
 	name = "Floof"
 	body_marking_list = list(
@@ -32,6 +39,12 @@
 	name = "Scaled Belly"
 	body_marking_list = list(
 		/datum/body_marking/bellyscale
+	)
+
+/datum/body_marking_set/kobold_scale
+	name = "Kobold Scales"
+	body_marking_list = list(
+		/datum/body_marking/kobold_scale
 	)
 
 /datum/body_marking_set/tiger

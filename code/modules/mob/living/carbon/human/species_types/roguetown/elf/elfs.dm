@@ -80,9 +80,6 @@
 	body_markings = list(
 	)
 
-/datum/species/elf/wood/on_species_gain(mob/living/carbon/C, datum/species/old_species)
-	..()
-
 /datum/species/elf/wood/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return
